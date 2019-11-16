@@ -1,0 +1,10 @@
+.active-item {
+  border-left: 4px solid var(--ion-color-secondary);
+  ion-icon{
+    color: var(--ion-color-secondary);
+  }
+}
+
+ion-list > ion-menu-toggle > ion-item > ion-icon {
+  margin-right: 16px !important;
+}
