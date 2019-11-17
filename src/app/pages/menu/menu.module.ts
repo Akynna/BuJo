@@ -19,6 +19,10 @@ const routes: Routes = [
       {
         path: 'day',
         loadChildren: '../day/day.module#DayPageModule'
+      },
+      {
+        path: 'drawingTest',
+        loadChildren: '../drawingTest/drawingTest.module#DrawingTestPageModule'
       }
     ]
   }
