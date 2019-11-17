@@ -37,7 +37,7 @@ div.header > * {
   vertical-align: middle;
 }
 
-div.header > i {
+div.header > div {
   float: left;
   width: 40px;
   font-size: 1.125em;
@@ -49,11 +49,11 @@ div.header > i {
   cursor: pointer;
 }
 
-div.header > i.fa-angle-left {
+div.header > .fa-angle-left {
   text-align: left;
 }
 
-div.header > i.fa-angle-right {
+div.header > .fa-angle-right {
   text-align: right;
   margin-left: -40px;
 }
