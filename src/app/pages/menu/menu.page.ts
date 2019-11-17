@@ -19,6 +19,11 @@ export class MenuPage implements OnInit {
       title: 'Month',
       url: '/menu/month',
       icon: 'log-in'
+    },
+    {
+      title: 'DrawingTest',
+      url: '/menu/drawingTest',
+      icon: 'log-in'
     }
   ];
 
