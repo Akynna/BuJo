@@ -1,7 +1,16 @@
-<app-header title="Year"></app-header>
-<ion-content padding>
-  <ion-content padding>
-    <!-- CALENDAR HERE -->
-
-  </ion-content>
+<app-header [title]="today.getFullYear()"></app-header>
+<ion-content class="ion-padding">
+  
+  <div class="scroll-container">
+    <div class="month-container">
+      <div class="month" *ngFor="let month of months">
+        <div class="header">
+          <span>{{month.name}}</span>
+        </div>
+        <span [ngClass]="['day', day.isToday ? 'today' : '']" 
+        *ngFor="let day of month.days">{{day.number}}</span>
+      </div>
+    </div>  
+  </div>  
+  
 </ion-content>
