@@ -1,0 +1,9 @@
+<app-header title="Drawing Test"></app-header>
+
+<ion-content padding>
+    <ion-content padding>
+        <div #fixedContainer ion-fixed>
+            <canvas #imageCanvas (touchstart)="startDrawing($event)" (touchmove)="moved($event)" (mousedown)="startDrawingMouse($event)" (mouseup)="stopDrawingMouse()" (mousemove)="movedMouse($event)"></canvas>
+        </div>
+    </ion-content>
+</ion-content>

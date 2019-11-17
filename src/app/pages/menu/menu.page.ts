@@ -13,11 +13,21 @@ export class MenuPage implements OnInit {
     {
       title: 'Year',
       url: '/menu/year',
-      icon: 'home'
+      icon: 'calendar'
     },
     {
       title: 'Month',
       url: '/menu/month',
+      icon: 'journal'
+    },
+    {
+      title: 'Day',
+      url: '/menu/day',
+      icon: 'today'
+    },
+    {
+      title: 'DrawingTest',
+      url: '/menu/drawingTest',
       icon: 'log-in'
     }
   ];

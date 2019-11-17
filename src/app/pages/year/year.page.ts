@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { IonContent, Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-year',
