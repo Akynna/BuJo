@@ -1,0 +1,113 @@
+$monthWidth: 300px;
+
+span {
+  color: #888888;
+}
+
+span > b {
+  color: black;
+}
+
+.border-box {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+ion-content {
+  float: left;
+  display: block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background: white;
+  border: solid 1px #cccccc;
+  margin-bottom: 10px;
+}
+
+div.header {
+  float: left;
+  width: 100%;
+  background: #2875c7;
+  height: 40px;
+  color: white;
+}
+
+div.header > * {
+  height: 40px;
+  line-height: 40px !important;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.header > div {
+  float: left;
+  width: 40px;
+  font-size: 1.125em;
+  font-weight: bold;
+  position: relative;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+div.header > span {
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  text-align: center;
+  color: inherit;
+}
+
+.scroll-container {
+  width:100%;
+  height:100%;
+  overflow:auto;
+}
+
+div.month-container {
+  width: 12*$monthWidth;
+
+  div.month  {
+    display: inline-block;
+    width:$monthWidth;
+    vertical-align: top;
+    border-top: solid 1px #cccccc;
+  }
+}
+
+div.month:first-child {
+  border-top: none;
+}
+
+div.month > span.day {
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border-left: solid 1px #cccccc;
+  font-size: 0.75em;
+  text-align: left;
+  height: 30px;
+  line-height: 30px !important;
+  display: inline-block;
+  vertical-align: middle;
+  background: white;
+  cursor: pointer;
+  color: black;
+  border-bottom: 1px solid grey;
+}
+
+div.month > span.day:first-child {
+  border-left: none;
+}
+
+div.month > span.day.today {
+  background: #E3F2FF;
+}
+
+
+div.month.names > span {
+  color: #2875c7;
+  font-weight: bold;
+}
