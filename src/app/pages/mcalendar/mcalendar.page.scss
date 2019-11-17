@@ -23,22 +23,20 @@ ion-content {
 }
 
 div.header {
-  float: left;
+  display:flex;
   width: 100%;
-  background: #2875c7;
+  background: var(--ion-color-secondary);
   height: 40px;
-  color: white;
+  color: var(--ion-color-tertiary);
+  text-align:center;
 }
 
 div.header > * {
   height: 40px;
   line-height: 40px !important;
-  display: inline-block;
-  vertical-align: middle;
 }
 
 div.header > div {
-  float: left;
   width: 40px;
   font-size: 1.125em;
   font-weight: bold;
@@ -59,16 +57,14 @@ div.header > .fa-angle-right {
 }
 
 div.header > span {
-  float: left;
-  width: 100%;
+  display: inline-block;
+  width: 90%;
   font-weight: bold;
   text-transform: uppercase;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  padding-left: 50px;
-  margin-left: -40px;
+  margin: auto;
   text-align: center;
-  padding-right: 40px;
   color: inherit;
 }
 
@@ -112,11 +108,11 @@ div.week > span.day.different-month {
 }
 
 div.week > span.day.selected {
-  background: #2875c7;
+  background: var(--ion-color-primary);
   color: white;
 }
 
 div.week.names > span {
-  color: #2875c7;
+  color: var(--ion-color-primary);
   font-weight: bold;
 }

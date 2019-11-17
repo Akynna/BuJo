@@ -26,9 +26,9 @@ ion-content {
 div.header {
   float: left;
   width: 100%;
-  background: #2875c7;
+  background: var(--ion-color-secondary);
   height: 40px;
-  color: white;
+  color: var(--ion-color-tertiary);
 }
 
 div.header > * {

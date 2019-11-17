@@ -1,24 +1,28 @@
 <app-header title="Calendar"></app-header>
 <ion-content padding>
-
-        <div class="header">
-                <div class="fa fa-angle-left" (click)="previous()">prev</div>
-                <span>{{month.format("MMMM, YYYY")}}</span>
-                <div class="fa fa-angle-right" (click)="next()">next</div>
-              </div>
-              <div class="week names">
-                <span class="day">Sun</span>
-                <span class="day">Mon</span>
-                <span class="day">Tue</span>
-                <span class="day">Wed</span>
-                <span class="day">Thu</span>
-                <span class="day">Fri</span>
-                <span class="day">Sat</span>
-              </div>
-              <div class="week"  *ngFor="let week of weeks">
-                <span [ngClass]="['day', day.isToday ? 'today' : '', !day.isCurrentMonth ? 'different-month' : '',
-                day.date.isSame(selected) ? 'selected' : '' ]" (click)="select(day)"
-                 *ngFor="let day of week.days">{{day.number}}</span>
-              </div>
-
+  
+  <div class="header">
+    <div (click)="previous()">
+      <ion-icon name="arrow-dropleft-circle"></ion-icon>
+    </div>
+    <span>{{month.format("MMMM, YYYY")}}</span>
+    <div (click)="next()">
+      <ion-icon name="arrow-dropright-circle"></ion-icon>
+    </div>
+  </div>
+  <div class="week names">
+    <span class="day">Sun</span>
+    <span class="day">Mon</span>
+    <span class="day">Tue</span>
+    <span class="day">Wed</span>
+    <span class="day">Thu</span>
+    <span class="day">Fri</span>
+    <span class="day">Sat</span>
+  </div>
+  <div class="week"  *ngFor="let week of weeks">
+    <span [ngClass]="['day', day.isToday ? 'today' : '', !day.isCurrentMonth ? 'different-month' : '',
+    day.date.isSame(selected) ? 'selected' : '' ]" (click)="select(day)"
+    *ngFor="let day of week.days">{{day.number}}</span>
+  </div>
+  
 </ion-content>
