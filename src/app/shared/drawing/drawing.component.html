@@ -1,19 +1,46 @@
-<ion-header>
-  <!--
+
 <ion-content padding>
-  <ion-content padding>
-    <div #fixedContainer ion-fixed>
-        <canvas #imageCanvas (touchstart)="startDrawing($event)" (touchmove)="moved($event)" (mousedown)="startDrawingMouse($event)" (mouseup)="stopDrawingMouse()" (mousemove)="movedMouse($event)"></canvas>
-    </div>
-  </ion-content>
-</ion-content>
-    
-  -->
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>{{ title }}</ion-title>
-  </ion-toolbar>
+  <div>
+      <ion-list>
+          <ion-item>
+              <ion-label> Couleur </ion-label>
+          </ion-item>
+      </ion-list>
   
-</ion-header>
+      <ion-grid>
+          <ion-row>
+              <ion-col style="background:#FF6666" (press)="setColor('#FF6666')" (mousedown)="setColor('#FF6666')">&nbsp;</ion-col>
+              <ion-col style="background:#FFB266" (press)="setColor('#FFB266')" (mousedown)="setColor('#FFB266')">&nbsp;</ion-col>
+              <ion-col style="background:#FFFF66" (press)="setColor('#FFFF66')" (mousedown)="setColor('#FFFF66')">&nbsp;</ion-col>
+              <ion-col style="background:#B2FF66" (press)="setColor('#B2FF66')" (mousedown)="setColor('#B2FF66')">&nbsp;</ion-col>
+              <ion-col style="background:#66FF66" (press)="setColor('#66FF66')" (mousedown)="setColor('#66FF66')">&nbsp;</ion-col>
+              <ion-col style="background:#66FFB2" (press)="setColor('#66FFB2')" (mousedown)="setColor('#66FFB2')">&nbsp;</ion-col>
+              <ion-col style="background:#66FFFF" (press)="setColor('#66FFFF')" (mousedown)="setColor('#66FFFF')">&nbsp;</ion-col>
+              <ion-col style="background:#66B2FF" (press)="setColor('#66B2FF')" (mousedown)="setColor('#66B2FF')">&nbsp;</ion-col>
+              <ion-col style="background:#6666FF" (press)="setColor('#6666FF')" (mousedown)="setColor('#6666FF')">&nbsp;</ion-col>
+              <ion-col style="background:#B266FF" (press)="setColor('#B266FF')" (mousedown)="setColor('#B266FF')">&nbsp;</ion-col>
+              <ion-col style="background:#FF66FF" (press)="setColor('#FF66FF')" (mousedown)="setColor('#FF66FF')">&nbsp;</ion-col>
+              <ion-col style="background:#FF66B2" (press)="setColor('#FF66B2')" (mousedown)="setColor('#FF66B2')">&nbsp;</ion-col>
+              <ion-col style="background:#FFFFFF" (press)="setColor('#FFFFFF')" (mousedown)="setColor('#FFFFFF')">&nbsp;</ion-col>
+          </ion-row>
+      </ion-grid>
+  </div>
+  
+  <div #fixedContainer ion-fixed>
+    <!-- NE MARCHE PAS SUR MOBILE A CAUSE DES HEIGHT - WIDTH-->
+      <canvas #imageCanvas width="1000px" height="700px"(touchstart)="startDrawing($event)" (touchmove)="moved($event)" (mousedown)="startDrawingMouse($event)" (mouseup)="stopDrawingMouse()" (mousemove)="movedMouse($event)"></canvas>
+  </div>
+
+</ion-content>
+
+
+<!--
+<ion-content padding>
+    <ion-content padding>
+        <div #fixedContainer ion-fixed>
+            <canvas #imageCanvas (touchstart)="startDrawing($event)" (touchmove)="moved($event)" (mousedown)="startDrawingMouse($event)" (mouseup)="stopDrawingMouse()" (mousemove)="movedMouse($event)"></canvas>
+        </div>
+    </ion-content>
+</ion-content>
+-->
+

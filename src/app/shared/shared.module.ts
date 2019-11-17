@@ -6,8 +6,8 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [HeaderComponent, DrawingComponent],
+  declarations: [DrawingComponent, HeaderComponent],
   imports: [CommonModule, IonicModule, FormsModule],
-  exports: [CommonModule, IonicModule, FormsModule, HeaderComponent, DrawingComponent]
+  exports: [CommonModule, IonicModule, FormsModule, DrawingComponent, HeaderComponent]
 })
 export class SharedModule {}

@@ -32,6 +32,11 @@ export class DrawingTestPage implements OnInit {
   ngOnInit() {
   }
 
+  setColor(color) {
+    console.log("switch color");
+    this.selectedColor = color;
+  }
+
   ionViewDidEnter() {
     // https://github.com/ionic-team/ionic/issues/9071#issuecomment-362920591
     // Get the height of the fixed item
