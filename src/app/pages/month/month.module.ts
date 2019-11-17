@@ -5,7 +5,7 @@ import { SharedModule } from '../../shared/shared.module';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: 'monthtabs',
     component: MonthPage,
     children: [
       {
@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'tabs/mcalendar',
+    redirectTo: 'monthtabs/mcalendar',
     pathMatch: 'full'
   }
 ];

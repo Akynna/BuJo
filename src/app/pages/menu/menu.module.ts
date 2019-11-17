@@ -15,6 +15,10 @@ const routes: Routes = [
       {
         path: 'month',
         loadChildren: '../month/month.module#MonthPageModule'
+      },
+      {
+        path: 'day',
+        loadChildren: '../day/day.module#DayPageModule'
       }
     ]
   }
