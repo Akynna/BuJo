@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { IonContent, Platform } from '@ionic/angular';
 
 @Component({
@@ -6,11 +6,16 @@ import { IonContent, Platform } from '@ionic/angular';
   templateUrl: './drawing.component.html',
   styleUrls: ['./drawing.component.scss']
 })
+
 export class DrawingComponent implements OnInit {
+
   @Input() title: string;
+
   @ViewChild('imageCanvas', {static: false}) canvas: ElementRef;
   canvasElement: any;
+
   private ctx: CanvasRenderingContext2D;
+  
   private position: DOMRect;
 
   @ViewChild(IonContent, {static: false}) content: IonContent;
@@ -32,16 +37,21 @@ export class DrawingComponent implements OnInit {
   ngOnInit() {
   }
 
+  setColor(color) {
+    this.selectedColor = color;
+  }
+
   ionViewDidEnter() {
     // https://github.com/ionic-team/ionic/issues/9071#issuecomment-362920591
     // Get the height of the fixed item
     //let itemHeight = this.fixedContainer.nativeElement.offsetHeight;
-
     this.ctx = this.canvas.nativeElement.getContext('2d');
     this.position = this.canvas.nativeElement.getBoundingClientRect();
 
     this.offsetX = this.position.left;
     this.offsetY = this.position.top;
+
+    
  
     // Add preexisting scroll margin to fixed container size
     //itemHeight = Number.parseFloat(scroll.style.marginTop.replace("px", "")) + itemHeight;
@@ -54,6 +64,7 @@ export class DrawingComponent implements OnInit {
     this.canvasElement.width = this.plt.width() + '';
     this.canvasElement.height = 200;*/
 
+    
   }
 
   startDrawing(ev) {
@@ -72,16 +83,16 @@ export class DrawingComponent implements OnInit {
       this.saveX = this.saveX * (this.canvas.nativeElement.width / width);
       this.saveY = this.saveY * (this.canvas.nativeElement.height / height);
     }
-
-    console.log(ev);
   }
 
   startDrawingMouse(ev) {
     //var canvasPosition = this.canvasElement.getBoundingClientRect();
+
     this.isDown = true;
+    
     this.ctx = this.canvas.nativeElement.getContext('2d');
     this.position = this.canvas.nativeElement.getBoundingClientRect();
-    console.log("start drawing");
+    console.log("start drawing mouse");
 
     this.saveX = ev.pageX - this.offsetX;
     this.saveY = ev.pageY - this.offsetY;
@@ -94,10 +105,13 @@ export class DrawingComponent implements OnInit {
       this.saveY = this.saveY * (this.canvas.nativeElement.height / height);
     }
 
+    console.log("start drawing mouse");
+
+    this.offsetX = this.position.left;
+    this.offsetY = this.position.top;
+
     /*this.saveX = ev.pageX - this.position.x;
     this.saveY = ev.pageY - this.position.y;*/
-
-    console.log("dakjsdsakd");
   }
 
   stopDrawingMouse() {
@@ -121,6 +135,7 @@ export class DrawingComponent implements OnInit {
     this.ctx.lineJoin = "round";
     this.ctx.strokeStyle = this.selectedColor;
     this.ctx.lineWidth = 2;
+    this.ctx.imageSmoothingEnabled = true;
 
     this.ctx.beginPath();
     this.ctx.moveTo(this.saveX, this.saveY);
@@ -131,12 +146,13 @@ export class DrawingComponent implements OnInit {
 
     this.saveX = currentX;
     this.saveY = currentY;
+
   }
 
   movedMouse(ev) {
     if (this.isDown)
     {
-      console.log("moving");
+      console.log("moving mouse");
       /*const currentX = ev.pageX - this.position.x;
       const currentY = ev.pageY - this.position.y;*/
       this.ctx = this.canvas.nativeElement.getContext('2d');
@@ -155,7 +171,9 @@ export class DrawingComponent implements OnInit {
   
       this.ctx.lineJoin = "round";
       this.ctx.strokeStyle = this.selectedColor;
-      this.ctx.lineWidth = 1;
+      this.ctx.lineWidth = 2;
+      this.ctx.imageSmoothingEnabled = true;
+      this.ctx.imageSmoothingQuality = "low";
   
       this.ctx.beginPath();
       this.ctx.moveTo(this.saveX, this.saveY);
@@ -168,4 +186,5 @@ export class DrawingComponent implements OnInit {
       this.saveY = currentY;
     }
   }
+
 }
